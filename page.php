@@ -15,8 +15,8 @@
 						<h2><a href="<?php the_permalink();?>"><?php the_title(); ?></a></h2>
 						<div class="info">[By <?php the_author();?>  on   <?php the_date('F j, Y');?>  with <a href="#">01 Commnets</a>]</div>
 						<?php 
-                            //the_content();
-                            the_excerpt();
+                            the_content();
+                            //the_excerpt();
                         ?>
 					</article>
 					<?php 
