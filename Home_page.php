@@ -55,7 +55,7 @@ Template name: MyHomePage
 						$query = new WP_Query( 
 							array(
 								'post_type' => 'post',
-								// 'count' => '2'
+								 'posts_per_page' => 3
 								)
 						 );
 
