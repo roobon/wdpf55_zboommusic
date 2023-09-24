@@ -12,9 +12,19 @@ Template name: MyHomePage
 		<div class="slider">
 			<div class="rslides_container">
 				<ul class="rslides" id="slider">
-					<li><img src="<?php echo get_template_directory_uri() ?>/images/slide1.png"/></li>
-					<li><img src="<?php echo get_template_directory_uri() ?>/images/slide2.png"/></li>
-					<li><img src="<?php echo get_template_directory_uri() ?>/images/slide3.png"/></li>
+					<?php 
+						$query = new WP_Query( 
+							array(
+								'post_type' => 'sliders',
+								//  'posts_per_page' => 3
+								)
+						 );
+
+						 while($query->have_posts()) {
+							$query->the_post();
+					?>
+					<li><?php the_post_thumbnail() ?></li>
+					<?php } ?>	
 				</ul>
 			</div>
 		</div>

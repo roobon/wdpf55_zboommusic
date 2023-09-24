@@ -28,4 +28,24 @@ add_action( 'widgets_init', 'zboommusic_register_widgets');
 
 
 
+function create_custom_post_type() {
+
+    register_post_type( 'sliders',
+    
+        array(
+        'labels' => array(
+        'name' => __( 'Sliders' ),
+        'singular_name' => __( 'Slider' )
+        ),
+        'public' => true,
+        'supports' => array( 'title', 'thumbnail')
+        )
+        );
+    }
+    
+    add_action( 'init', 'create_custom_post_type' );
+
+
+
+
 ?>
