@@ -58,5 +58,16 @@ function create_custom_post_type() {
 
 
 
+    function custom_search_form( $form ) {
+                $form = '<form action="'. home_url( '/' ). '">
+                <input type="text" name="s" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+                </form>';
+          
+                return $form;
+              }
+    add_filter( 'get_search_form', 'custom_search_form', 40);        
+
+
+
 
 ?>
