@@ -2,6 +2,17 @@
     function zboomMusic_setup(){
         add_theme_support("post-thumbnails");
         add_theme_support( 'menus' );
+        add_theme_support( 'custom-background' );
+        
+        $defaults = array(
+            'height'               => 100,
+            'width'                => 400,
+            'flex-height'          => true,
+            'flex-width'           => true,
+            'unlink-homepage-logo' => true, 
+        );
+        
+        add_theme_support( 'custom-logo', $defaults );
 
         register_nav_menus( array(
 	    	'primary_menu' => __( 'Primary Menu', 'zboommusic' ),

@@ -36,13 +36,16 @@
 		  });
 		});
 	</script>
+	<?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class()?>>
   
 <!--------------Header--------------->
 <header>
 	<div class="wrap-header zerogrid">
-		<div id="logo"><a href="<?php echo home_url() ?>"><img src="<?php echo get_template_directory_uri() ?>/images/logo.png"/></a></div>
+		<div id="logo"><a href="<?php echo home_url() ?>"> <?php if ( function_exists( 'the_custom_logo' ) ) {
+	the_custom_logo();
+} ?> </a></div>
 		
 		<div id="search">
 			<div class="button-search"></div>
